@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+* {
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+body {
+    display: block;
+    overflow-x: hidden;
+}
+@media (max-width: 991px){
+html {
+    font-size: 50%;
+}}
+section {
+    min-height: 100vh;
+    padding-top: 8.5rem;
+    display: block;
+}
+.gallery {
+    background: linear-gradient(rgba(255,255,255,.7),rgba(255,255,255,.7)), url(https://t4.ftcdn.net/jpg/02/44/69/87/360_F_244698725_uWdUNY1oiaHthwcb1NK6IqtPuRNKHor2.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.heading {
+    text-align: center;
+    font-size: 3rem;
+    padding: 0 0.5rem;
+    color: #333;
+}
+h1 {
+    display: block;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+h3 {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.gallery .box-container .box h3 {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    font-size: 3rem;
+    opacity: 0;
+}
+.heading span {
+    color: yellow;
+}
+.gallery .box-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+div {
+    display: block;
+}
+.gallery .box-container .box {
+    height: 13rem;
+    width: 22rem;
+    margin: 2rem;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+.gallery .box-container .box::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.7);
+    transition: .2s linear;
+}
+.gallery .box-container .box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.gallery .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3rem;
+}
+.gallery .center .gallery-back {
+    font-size: 1.7rem;
+    color: #fff;
+    padding: 10px 22px;
+    background-color: #777;
+    border: 1px solid #777;
+    border-radius: 40px;
+}
+.gallery .center .gallery-back:hover {
+    background-color: #F7CA3E;
+}
+    </style>
+</head>
+<body>
+  <section class="gallery" id="gallery">
+      <h1 class="heading">our food <span>gallery</span></h1>
+      <div class="box-container">
+          <div class="box">
+         <img src="https://media.istockphoto.com/photos/woman-offering-snack-picture-id137214691?k=20&m=137214691&s=612x612&w=0&h=fc7xUcvh0-STgq5vKdJeSpgUSqRtXw532gV2kF8RIZo=" alt="">
+         <h3>delicious food</h3>
+          </div>
+      <div class="box">
+      <img src="https://media.istockphoto.com/photos/delicious-meal-picture-id1295387240?b=1&k=20&m=1295387240&s=170667a&w=0&h=KtWYFjSBgpNgVkE3P-WKZ2F6V-VxyUBBtJIP_k8IANM=" alt="">
+       <h3>delicious food</h3>
+    </div>
+        <div class="box">
+        <img src="https://www.rewardsnetwork.com/wp-content/uploads/2015/10/SmallPlates_Main1.jpg" alt="">
+       <h3>delicious food</h3>
+  </div>
+ <div class="box">
+ <img src="https://restaurantengine.com/wp-content/uploads/2014/01/Small-Restaurant-660x439.jpg" alt="">
+  <h3>delicious food</h3>
+  </div>
+ <div class="box">
+   <img src="https://blog.chefsvisionknives.com/wp-content/uploads/2022/02/Small-Portion-of-food-Elegant-min.jpg?ezimgfmt=rs:370x246/rscb1/ng:webp/ngcb1" alt="">
+  <h3>delicious food</h3>
+      </div>
+<div class="box">
+         <img src="https://cdn.winsightmedia.com/platform/files/public/sliders-burger-small-plate.gif" alt="">
+      <h3>delicious food</h3>
+     </div>
+      </div>
+      <div class="center">
+          <a href="home.html" class="gallery-back">back to home</a>
+      </div>
+  </section>  
+</body>
+</html>

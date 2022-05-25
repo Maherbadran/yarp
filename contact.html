@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+@media (max-width: 991px){
+html {
+    font-size: 50%;
+}
+}
+section {
+    min-height: 50vh;
+    padding-top: 8.5rem;
+    display: block;
+}
+.order {
+    background: url(https://wallpapercave.com/wp/5kWD6JT.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.heading {
+    text-align: center;
+    font-size: 4rem;
+    padding: 0 0.5rem;
+    color: #333;
+}
+h1 {
+    display: block;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.order .row {
+    display: flex;
+    background: #fff;
+    margin: 2rem 1rem;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1rem rgba(78, 75, 75, 0.3);
+    border-radius: 1rem;
+}
+.order .row form {
+    flex: 1 1 60%;
+    background: rgba(133, 127, 127, 0.329);
+    padding: 2rem;
+    display: block;
+}
+.order .row form .box {
+    padding: 1rem;
+    margin: 1rem 0;
+    font-size: 1rem;
+    color: #333;
+    text-transform: none;
+    background: #f0f0f0;
+    width: 100%;
+}
+div {
+    display: block;
+}
+.order .row form .box label {
+    margin-right: 1.5rem;
+}
+.order .row form .address {
+    resize: none;
+    height: 15rem;
+}
+.btn {
+    font-size: 1.2rem;
+    padding: 0.7rem 4rem;
+    border-radius: 5rem;
+    margin-top: 1rem;
+    background: none;
+    color: #333;
+    cursor: pointer;
+    border: 0.2rem solid yellow;
+}
+.btn:hover {
+    background-color: #F7CA3E;
+}
+.order .row .image {
+    flex: 1 1 40%;
+}
+.order .row .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.content .center, .gallery .center, .order .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.order .center .contact-back {
+    font-size: 1.7rem;
+    color: #fff;
+    padding: 10px 22px;
+    background-color: #777;
+    border: 1px solid #777;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+}
+.order .center .contact-back:hover {
+    background-color: #F7CA3E;
+}
+    </style>
+</head>
+<body>
+    <section class="order" id="order">
+        <h1 class="heading">make an order</h1>
+      <div class="row">
+          <form action="" id="contactform">
+              <input type="text" placeholder="first name" id="custname" class="box">
+              <input type="text" placeholder="last name" id="custname" class="box">
+              <input type="email" placeholder="your e-mail" class="box" id="email">
+              <input type="password" placeholder="password" class="box" name="" id="password" maxlength="8">
+              <input type="number" placeholder="phone number" class="box" id="telephone">
+              <div class="box">
+                 <label for="gander">gander</label>
+                 <input type="radio" id="male" value="male" name="gander">
+                 <label for="male">male</label>
+                 <input type="radio" id="female" value="female" name="gander">
+                 <label for="female">female</label>
+              </div>
+              <textarea name="" id="" cols="30" rows="10" class="box address" placeholder="your address"></textarea>
+              <input type="submit" value="order now" class="btn">
+          </form>
+          <div class="image">
+              <img src="https://heartofthecity.co.nz/sites/default/files/styles/ratio_5_x_3_medium_/public/2019-06/food%20and%20drinks.jpg?itok=qBBXFkBe" alt="photo">
+          </div>
+      </div>
+      <div class="center">
+          <a href="home.html" class="contact-back">back to home</a>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        window.onload=pageLoad;
+function pageLoad(){
+    var contactForm = document.getElementById("contactform");
+    contactform.onsubmit = validate;
+};
+function validate(){
+   let check = true;
+   let name = document.getElementById("custname").value;
+    let mail = document.getElementById("email").value;
+    let phone = document.getElementById("telephone").value;
+   let password = document.getElementById("password").value;
+
+    
+    if(name == ""){
+        alert('Name is required !');
+        check= false;
+    }
+
+if(mail == ""){
+        alert('E-mail is required !');
+        check= false;
+    };
+
+    if(password == ""){
+        alert('Password is required !');
+        check= false;
+    };
+    if(password.length !== 8){
+        alert('Password must be 8 numbers !');
+        check= false;
+    };
+    if (phone == "") {
+
+        alert('Phone is required !');
+    };
+    if (!name.match(/^[A-Za-z ]+$/)){ 
+        alert("only letters or space allowed in name field");
+        check= false;
+    };
+
+    if (!mail.match(/^[a-zA-z0-9]+@[a-zA-Z]+\.[a-zA-Z]+$/)){
+        alert("Email is Not Valid");
+        check=false;
+    };
+
+    if (!password.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/)){
+        alert("Password is Not Valid, It must contain 8 characters: 1 uppercase, one lowercase, one number and one special character at least");
+        check=false;
+    };
+    
+    if (!phone.match(/[0-9]{4}-[0-9]{3}-[0-9]{4}/)){
+        
+
+        alert("Phone is not valid");
+        check=false;
+    };
+
+    return check;
+
+};
+    </script>
+</body>
+</html>
